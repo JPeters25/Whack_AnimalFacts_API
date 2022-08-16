@@ -2,14 +2,16 @@
 using AnimalFacts.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AnimalFacts.solution.Migrations
 {
     [DbContext(typeof(AnimalFactsContext))]
-    partial class AnimalFactsContextModelSnapshot : ModelSnapshot
+    [Migration("20220816171214_SeedData3")]
+    partial class SeedData3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
