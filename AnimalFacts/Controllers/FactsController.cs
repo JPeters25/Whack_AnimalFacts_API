@@ -15,7 +15,6 @@ namespace AnimalFacts.Controllers
 {
   [ApiController]
   [ApiVersion("1.0")]
-  // [ApiVersion("2.0")]
   [Route("api/{version:apiVersion}/Fact")]
   
   public class FactsV1Controller : ControllerBase
@@ -30,7 +29,7 @@ namespace AnimalFacts.Controllers
      // GET: api/Facts
 
     [HttpGet]
-    // [ApiVersion("1.0")]
+    [ApiVersion("1.0")]
     public async Task<ActionResult<IEnumerable<Fact>>> Get(string animaltype, string species, string description, string nsfw)
     {
       var query = _db.Facts.AsQueryable();
@@ -60,32 +59,32 @@ namespace AnimalFacts.Controllers
     
     // [HttpGet]
     // [ApiVersion("2.0")]
-    // public async Task<ActionResult<IEnumerable<Fact>>> GetV2(string animaltype, string species, string description, bool nsfw)
+    // public async Task<ActionResult<IEnumerable<Fact>>> GetV2(string nsfw)
     // {
     //    var query = _db.Facts.AsQueryable();
 
-    //   if (animaltype != null)
-    //   {
-    //     query = query.Where(entry => entry.AnimalType == animaltype);
-    //   }
+      // if (animaltype != null)
+      // {
+      //   query = query.Where(entry => entry.AnimalType == animaltype);
+      // }
 
-    //   if (species != null)
-    //   {
-    //     query = query.Where(entry => entry.Species == species);
-    //   } 
+      // if (species != null)
+      // {
+      //   query = query.Where(entry => entry.Species == species);
+      // } 
 
-    //   if (description != null)
-    //   {
-    //     query = query.Where(entry => entry.Description == description);
-    //   }
+      // if (description != null)
+      // {
+      //   query = query.Where(entry => entry.Description == description);
+      // }
 
-    //   if (nsfw != false)
-    //   {
-    //     query = query.Where(entry => entry.Nsfw == nsfw);
-    //   }
+      // if (nsfw != null)
+      // {
+      //   query = query.Where(entry => entry.Nsfw == nsfw);
+      // }
 
-    //    return await query.ToListAsync();
-    //   }
+      //  return await query.ToListAsync();
+      // }
 
 
     // GET: api/Facts/5

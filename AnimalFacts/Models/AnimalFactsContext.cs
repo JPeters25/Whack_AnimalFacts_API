@@ -86,5 +86,6 @@ namespace AnimalFacts.Models
     }
       
       public DbSet<Fact> Facts { get; set; }
+      
   }
 }
