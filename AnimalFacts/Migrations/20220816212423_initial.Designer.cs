@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimalFacts.solution.Migrations
 {
     [DbContext(typeof(AnimalFactsContext))]
-    [Migration("20220815232331_SeedData2")]
-    partial class SeedData2
+    [Migration("20220816212423_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,9 @@ namespace AnimalFacts.solution.Migrations
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("Nsfw")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("Species")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -46,6 +49,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 1,
                             AnimalType = "Mammal",
                             Description = "River otters will ATTACK PEOPLE",
+                            Nsfw = "false",
                             Species = "Otter"
                         },
                         new
@@ -53,6 +57,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 2,
                             AnimalType = "Mammal",
                             Description = "Sea otters will KILL FOR A GOOD TIME",
+                            Nsfw = "false",
                             Species = "Otter"
                         },
                         new
@@ -60,6 +65,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 3,
                             AnimalType = "Amphibian",
                             Description = "Just touching the golden poison dart frog WILL KILL YOU",
+                            Nsfw = "false",
                             Species = "Poison Dart Frog"
                         },
                         new
@@ -67,6 +73,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 4,
                             AnimalType = "Reptile",
                             Description = "Some horned lizards SQUIRT BLOOD FROM THEIR EYES",
+                            Nsfw = "false",
                             Species = "Horned Lizard"
                         },
                         new
@@ -74,6 +81,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 5,
                             AnimalType = "Mollusk",
                             Description = "Cone snails shoot you with a DEADLY HARPOON",
+                            Nsfw = "false",
                             Species = "Cone Snail"
                         },
                         new
@@ -81,6 +89,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 6,
                             AnimalType = "Arachnid",
                             Description = "Female black widow spiders EAT THE MALE WHILE MATING",
+                            Nsfw = "false",
                             Species = "Black Widow"
                         },
                         new
@@ -88,6 +97,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 7,
                             AnimalType = "Mammal",
                             Description = "Vampire bats FEED ON THE BLOOD OF MAMMALS, INCLUDING HUMANS",
+                            Nsfw = "false",
                             Species = "Vampire Bat"
                         },
                         new
@@ -95,6 +105,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 8,
                             AnimalType = "Mammal",
                             Description = "Male platypuses have POISONOUS SPURS",
+                            Nsfw = "false",
                             Species = "Platypus"
                         },
                         new
@@ -102,6 +113,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 9,
                             AnimalType = "Insect",
                             Description = "Fruit fly swarms are just MASSIVE ORGIES",
+                            Nsfw = "true",
                             Species = "Fruit Fly"
                         },
                         new
@@ -109,6 +121,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 10,
                             AnimalType = "Aves",
                             Description = "Petting birds TURNS THEM ON",
+                            Nsfw = "true",
                             Species = "Bird"
                         },
                         new
@@ -116,6 +129,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 11,
                             AnimalType = "Aves",
                             Description = "Some birds keep cool by DEFECATING ON THEIR OWN FEET",
+                            Nsfw = "false",
                             Species = "Bird"
                         },
                         new
@@ -123,6 +137,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 12,
                             AnimalType = "Aves",
                             Description = "Ducks EAT EACH OTHERS BABIES",
+                            Nsfw = "false",
                             Species = "Duck"
                         },
                         new
@@ -130,6 +145,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 13,
                             AnimalType = "Mammal",
                             Description = "Musk is BEAVER BUTT JUICE",
+                            Nsfw = "false",
                             Species = "Beaver"
                         },
                         new
@@ -137,6 +153,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 15,
                             AnimalType = "Arachnids",
                             Description = "After shedding their tails, scorpions DIE OF CONSTIPATION",
+                            Nsfw = "false",
                             Species = "Scorpion"
                         },
                         new
@@ -144,6 +161,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 16,
                             AnimalType = "Insect",
                             Description = "When bees mate, their SEXUAL ORGANS EXPLODE",
+                            Nsfw = "true",
                             Species = "Bee"
                         },
                         new
@@ -151,6 +169,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 17,
                             AnimalType = "Mammal",
                             Description = "Sloths ALMOST DIE EVERY TIME THEY POOP",
+                            Nsfw = "false",
                             Species = "Sloth"
                         },
                         new
@@ -158,6 +177,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 18,
                             AnimalType = "Reptile",
                             Description = "Snapping turtles will EAT HUMAN CORPSES",
+                            Nsfw = "false",
                             Species = "Snapping Turtle"
                         },
                         new
@@ -165,6 +185,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 19,
                             AnimalType = "Mammal",
                             Description = "Some wild rats can weigh UP TO 11 POUNDS",
+                            Nsfw = "false",
                             Species = "Rat"
                         },
                         new
@@ -172,6 +193,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 20,
                             AnimalType = "Marsupial",
                             Description = "Most koalas HAVE CHLAMYDIA",
+                            Nsfw = "false",
                             Species = "Koala"
                         },
                         new
@@ -179,6 +201,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 21,
                             AnimalType = "Insect",
                             Description = "Ladybugs will EAT THEIR OWN EGGS",
+                            Nsfw = "false",
                             Species = "Lady Bug"
                         },
                         new
@@ -186,6 +209,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 22,
                             AnimalType = "Mollusk",
                             Description = "Snails have RAZOR SHARP TEETH",
+                            Nsfw = "false",
                             Species = "Snail"
                         },
                         new
@@ -193,6 +217,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 23,
                             AnimalType = "Mammal",
                             Description = "Slow loris monkeys have POISONOUS ELBOWS",
+                            Nsfw = "false",
                             Species = "Loris Monkey"
                         },
                         new
@@ -200,6 +225,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 24,
                             AnimalType = "Arachnid",
                             Description = "Baby spiders EAT THEIR MOMS",
+                            Nsfw = "false",
                             Species = "Spider"
                         },
                         new
@@ -207,6 +233,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 25,
                             AnimalType = "Marsupial",
                             Description = "Kangaroo mothers will SACRIFICE THEIR OWN BABIES TO STAY ALIVE",
+                            Nsfw = "false",
                             Species = "Kangaroo"
                         },
                         new
@@ -214,6 +241,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 26,
                             AnimalType = "Aves",
                             Description = "Ostriches KICK HARD ENOUGH TO KILL YOU",
+                            Nsfw = "false",
                             Species = "Ostrich"
                         },
                         new
@@ -221,6 +249,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 27,
                             AnimalType = "Invertebrate",
                             Description = "Some jellyfish can sting you EVEN AFTER THEY ARE DEAD",
+                            Nsfw = "false",
                             Species = "Jellyfish"
                         },
                         new
@@ -228,6 +257,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 28,
                             AnimalType = "Invertebrate",
                             Description = "Sea Cucumbers SHOOT THEIR ORGANS THROUGH THEIR BUTTS AT PREDATORS",
+                            Nsfw = "false",
                             Species = "Sea Cucumber"
                         },
                         new
@@ -235,6 +265,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 29,
                             AnimalType = "Mammal",
                             Description = "Deer will EAT HUMAN REMAINS",
+                            Nsfw = "false",
                             Species = "Deer"
                         },
                         new
@@ -242,6 +273,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 30,
                             AnimalType = "Fish",
                             Description = "The Sheepshead Fish has TEETH LIKE A HUMAN",
+                            Nsfw = "false",
                             Species = "Sheepshead Fish"
                         },
                         new
@@ -249,6 +281,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 31,
                             AnimalType = "Fish",
                             Description = "Great White Sharks can smell blood in the water from UP TO THREE MILES AWAY",
+                            Nsfw = "false",
                             Species = "Great White Shark"
                         },
                         new
@@ -256,6 +289,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 32,
                             AnimalType = "Reptile",
                             Description = "Crocodiles can CLIMB TREES",
+                            Nsfw = "false",
                             Species = "Crocodile"
                         },
                         new
@@ -263,6 +297,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 33,
                             AnimalType = "Reptile",
                             Description = "King Cobras have enough venom in one bite to kill TWENTY PEOPLE",
+                            Nsfw = "false",
                             Species = "King Cobra"
                         },
                         new
@@ -270,6 +305,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 34,
                             AnimalType = "Reptile",
                             Description = "The Mulga Snake BITES YOU IN YOUR SLEEP",
+                            Nsfw = "false",
                             Species = "Mulga Snake"
                         },
                         new
@@ -277,6 +313,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 35,
                             AnimalType = "Mammal",
                             Description = "Vampire Bats CAN RUN",
+                            Nsfw = "false",
                             Species = "Vampire Bat"
                         },
                         new
@@ -284,6 +321,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 36,
                             AnimalType = "Reptile",
                             Description = "Some turtles BREATHE OUT OF THEIR BUTTS",
+                            Nsfw = "false",
                             Species = "Turtle"
                         },
                         new
@@ -291,6 +329,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 37,
                             AnimalType = "Mammal",
                             Description = "Orcas kill sharks BY SUFFOCATING THEM",
+                            Nsfw = "false",
                             Species = "Orca"
                         },
                         new
@@ -298,6 +337,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 38,
                             AnimalType = "Mammal",
                             Description = "A starving mouse will EAT ITS OWN TAIL",
+                            Nsfw = "false",
                             Species = "Mouse"
                         },
                         new
@@ -305,6 +345,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 39,
                             AnimalType = "Mammal",
                             Description = "A bear can run AS FAST AS A HORSE",
+                            Nsfw = "false",
                             Species = "Bear"
                         },
                         new
@@ -312,6 +353,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 40,
                             AnimalType = "Mammal",
                             Description = "Dolphins TORTURE THEIR PREY",
+                            Nsfw = "false",
                             Species = "Dolphin"
                         },
                         new
@@ -319,6 +361,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 41,
                             AnimalType = "Mammal",
                             Description = "Polar Bears will EAT EACH OTHER",
+                            Nsfw = "false",
                             Species = "Polar Bear"
                         },
                         new
@@ -326,6 +369,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 42,
                             AnimalType = "Marsupial",
                             Description = "Baby koalas EAT THEIR MOTHERS’ FECES",
+                            Nsfw = "false",
                             Species = "Koala"
                         },
                         new
@@ -333,6 +377,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 43,
                             AnimalType = "Insect",
                             Description = "A Bullet Ant’s bite is so painful that IT FEELS LIKE BEING SHOT",
+                            Nsfw = "false",
                             Species = "Bullet Ant"
                         },
                         new
@@ -340,6 +385,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 44,
                             AnimalType = "Fish",
                             Description = "Electric Eels can JUMP OUT OF THE WATER",
+                            Nsfw = "false",
                             Species = "Electric Eel"
                         },
                         new
@@ -347,6 +393,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 45,
                             AnimalType = "Arachnid",
                             Description = "Spiders have CLEAR BLOOD",
+                            Nsfw = "false",
                             Species = "Spider"
                         },
                         new
@@ -354,6 +401,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 46,
                             AnimalType = "Mammal",
                             Description = "The Romans used CRUSHED MOUSE BRAINS AS TOOTHPASTE",
+                            Nsfw = "false",
                             Species = "Mouse"
                         },
                         new
@@ -361,6 +409,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 47,
                             AnimalType = "Arachnid",
                             Description = "Mites LIVE ON YOUR EYELASHES",
+                            Nsfw = "false",
                             Species = "Mite"
                         },
                         new
@@ -368,6 +417,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 48,
                             AnimalType = "Mammal",
                             Description = "Hearing a Narwhal sound will MAKE YOU GO DEAF",
+                            Nsfw = "false",
                             Species = "Narwhal"
                         },
                         new
@@ -375,6 +425,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 49,
                             AnimalType = "Mammal",
                             Description = "Because of their poor eyesight, Moose have been known to try to MATE WITH CARS",
+                            Nsfw = "false",
                             Species = "Narwhal"
                         },
                         new
@@ -382,6 +433,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 50,
                             AnimalType = "Mammal",
                             Description = "Sloths poop turds that weigh ⅓ OF THEIR BODY WEIGHT",
+                            Nsfw = "false",
                             Species = "Sloth"
                         },
                         new
@@ -389,6 +441,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 51,
                             AnimalType = "Mammal",
                             Description = "Manatees control their buoyancy through an ENDLESS CYCLE OF FARTING",
+                            Nsfw = "false",
                             Species = "Manatee"
                         },
                         new
@@ -396,6 +449,7 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 52,
                             AnimalType = "Mammal",
                             Description = "Manatee calves NURSE IN THEIR MOTHERS’ ARMPITS",
+                            Nsfw = "false",
                             Species = "Manatee"
                         },
                         new
@@ -403,7 +457,143 @@ namespace AnimalFacts.solution.Migrations
                             FactId = 53,
                             AnimalType = "Marsupial",
                             Description = "Wombats’ poop IS CUBE-SHAPED",
+                            Nsfw = "false",
                             Species = "Wombat"
+                        },
+                        new
+                        {
+                            FactId = 54,
+                            AnimalType = "Fish",
+                            Description = "Lobsters PEE OUT OF THEIR FACES",
+                            Nsfw = "false",
+                            Species = "Lobsters"
+                        },
+                        new
+                        {
+                            FactId = 55,
+                            AnimalType = "Reptile",
+                            Description = "To avoid being heard by sharks, marine iguanas can STOP THEIR OWN HEARTS",
+                            Nsfw = "false",
+                            Species = "Marine Iguana"
+                        },
+                        new
+                        {
+                            FactId = 56,
+                            AnimalType = "Fish",
+                            Description = "The Greenland shark can LIVE FOR 272 YEARS",
+                            Nsfw = "false",
+                            Species = "Shark"
+                        },
+                        new
+                        {
+                            FactId = 57,
+                            AnimalType = "Mammal",
+                            Description = "An elephant can use its massive penis to PROP ITSELF UP",
+                            Nsfw = "false",
+                            Species = "Elephant"
+                        },
+                        new
+                        {
+                            FactId = 58,
+                            AnimalType = "Mammal",
+                            Description = "A bearcat’s butthole SMELLS LIKE POPCORN",
+                            Nsfw = "false",
+                            Species = "Bearcat"
+                        },
+                        new
+                        {
+                            FactId = 59,
+                            AnimalType = "Insect",
+                            Description = "Millipedes SING AND GIVE BACK RUBS WHILE MATING",
+                            Nsfw = "false",
+                            Species = "Milipedes"
+                        },
+                        new
+                        {
+                            FactId = 60,
+                            AnimalType = "Aves",
+                            Description = "Vultures stick their heads up other animals’ butts and EAT THEM FROM THE INSIDE OUT",
+                            Nsfw = "false",
+                            Species = "Vulture"
+                        },
+                        new
+                        {
+                            FactId = 61,
+                            AnimalType = "Mammal",
+                            Description = "Whale vaginas are AS BIG AS A KING-SIZED BED",
+                            Nsfw = "true",
+                            Species = "Whales"
+                        },
+                        new
+                        {
+                            FactId = 62,
+                            AnimalType = "Aves",
+                            Description = "Herring COMMUNICATE BY FARTING",
+                            Nsfw = "false",
+                            Species = "Herring"
+                        },
+                        new
+                        {
+                            FactId = 63,
+                            AnimalType = "Fish",
+                            Description = "Female brown trout will FAKE ORGASMS",
+                            Species = "Brown Trout"
+                        },
+                        new
+                        {
+                            FactId = 64,
+                            AnimalType = "Arachind",
+                            Description = "Australian Funnel-Web spiders can BITE THROUGH SHOES AND FINGERNAILS",
+                            Nsfw = "false",
+                            Species = "Funnel-Web Spider"
+                        },
+                        new
+                        {
+                            FactId = 65,
+                            AnimalType = "Mammal",
+                            Description = "Camel pee is THICKER THAN SYRUP",
+                            Nsfw = "false",
+                            Species = "Camel"
+                        },
+                        new
+                        {
+                            FactId = 66,
+                            AnimalType = "Insects",
+                            Description = "For every human on Earth, there are 200 MILLION INSECTS",
+                            Nsfw = "false",
+                            Species = "Insects"
+                        },
+                        new
+                        {
+                            FactId = 68,
+                            AnimalType = "Mammal",
+                            Description = "Sea otters will RAPE BABY SEALS",
+                            Nsfw = "true",
+                            Species = "Otter"
+                        },
+                        new
+                        {
+                            FactId = 69,
+                            AnimalType = "Mammal",
+                            Description = "During mating, the male otter will BITE THE FEMALE’S FACE",
+                            Nsfw = "false",
+                            Species = "Otter"
+                        },
+                        new
+                        {
+                            FactId = 70,
+                            AnimalType = "Mammal",
+                            Description = "Male otters will KILL FEMALES AND RAPE THEIR CORPSES",
+                            Nsfw = "true",
+                            Species = "Otter"
+                        },
+                        new
+                        {
+                            FactId = 71,
+                            AnimalType = "Mammal",
+                            Description = "Male otters will HOLD PUPS RANSOM IN EXCHANGE FOR FOOD",
+                            Nsfw = "false",
+                            Species = "Otter"
                         });
                 });
 #pragma warning restore 612, 618

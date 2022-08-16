@@ -33,6 +33,7 @@ namespace AnimalFacts
             x.ApiVersionReader = ApiVersionReader.Combine(
                     new HeaderApiVersionReader("x-api-version"),
                     new MediaTypeApiVersionReader("x-api-version"));
+                    new MediaTypeApiVersionReader("ver");
             });
             
             services.AddDbContext<AnimalFactsContext>(opt =>

@@ -13,10 +13,11 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 
 namespace AnimalFacts.Controllers
 {
-  [ApiVersion("1.0")]
-  [ApiVersion("2.0")]
-  [Route("api/FactsController")]
   [ApiController]
+  [ApiVersion("1.0")]
+  // [ApiVersion("2.0")]
+  [Route("api/{version:apiVersion}/Fact")]
+  
   public class FactsV1Controller : ControllerBase
   {
     private readonly AnimalFactsContext _db;
@@ -27,8 +28,10 @@ namespace AnimalFacts.Controllers
     }
 
      // GET: api/Facts
+
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Fact>>> Get(string animaltype, string species, string description)
+    // [ApiVersion("1.0")]
+    public async Task<ActionResult<IEnumerable<Fact>>> Get(string animaltype, string species, string description, string nsfw)
     {
       var query = _db.Facts.AsQueryable();
 
@@ -47,22 +50,42 @@ namespace AnimalFacts.Controllers
         query = query.Where(entry => entry.Description == description);
       }
 
-      return await query.ToListAsync();
-    }
-    
-    [HttpGet]
-    [MapToApiVersion("2.0")]
-    public async Task<ActionResult<IEnumerable<Fact>>> GetV2(bool nsfw)
-    {
-      var query = _db.Facts.AsQueryable();
-
-      if (nsfw != false)
+      if (nsfw != null)
       {
         query = query.Where(entry => entry.Nsfw == nsfw);
       }
 
-       return await query.ToListAsync();
-      }
+      return await query.ToListAsync();
+    }
+    
+    // [HttpGet]
+    // [ApiVersion("2.0")]
+    // public async Task<ActionResult<IEnumerable<Fact>>> GetV2(string animaltype, string species, string description, bool nsfw)
+    // {
+    //    var query = _db.Facts.AsQueryable();
+
+    //   if (animaltype != null)
+    //   {
+    //     query = query.Where(entry => entry.AnimalType == animaltype);
+    //   }
+
+    //   if (species != null)
+    //   {
+    //     query = query.Where(entry => entry.Species == species);
+    //   } 
+
+    //   if (description != null)
+    //   {
+    //     query = query.Where(entry => entry.Description == description);
+    //   }
+
+    //   if (nsfw != false)
+    //   {
+    //     query = query.Where(entry => entry.Nsfw == nsfw);
+    //   }
+
+    //    return await query.ToListAsync();
+    //   }
 
 
     // GET: api/Facts/5
