@@ -11,5 +11,7 @@ namespace AnimalFacts.Models
     public string Species { get; set; }
     [Required]
     public string Description { get; set; }
+    [Required]
+    public bool Nsfw { get; set; }
   }
 }

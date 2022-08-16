@@ -6,16 +6,22 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalFacts.Models;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning;
+
+
 
 namespace AnimalFacts.Controllers
 {
-  [Route("api/[controller]")]
+  [ApiVersion("1.0")]
+  [ApiVersion("2.0")]
+  [Route("api/FactsController")]
   [ApiController]
-  public class FactsController : ControllerBase
+  public class FactsV1Controller : ControllerBase
   {
     private readonly AnimalFactsContext _db;
 
-    public FactsController(AnimalFactsContext db)
+    public FactsV1Controller(AnimalFactsContext db)
     {
       _db = db;
     }
@@ -43,6 +49,21 @@ namespace AnimalFacts.Controllers
 
       return await query.ToListAsync();
     }
+    
+    [HttpGet]
+    [MapToApiVersion("2.0")]
+    public async Task<ActionResult<IEnumerable<Fact>>> GetV2(bool nsfw)
+    {
+      var query = _db.Facts.AsQueryable();
+
+      if (nsfw != false)
+      {
+        query = query.Where(entry => entry.Nsfw == nsfw);
+      }
+
+       return await query.ToListAsync();
+      }
+
 
     // GET: api/Facts/5
     [HttpGet("{id}")]

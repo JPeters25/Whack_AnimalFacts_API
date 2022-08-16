@@ -5,9 +5,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AnimalFacts.Models;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.AspNetCore.Mvc;
 
 
-namespace AnimalFacts.solution
+
+namespace AnimalFacts
 {
     public class Startup
     {
@@ -21,6 +25,16 @@ namespace AnimalFacts.solution
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApiVersioning(x => 
+            {
+            x.DefaultApiVersion = new ApiVersion(1, 0); 
+            x.AssumeDefaultVersionWhenUnspecified = true;   
+            x.ReportApiVersions = true;
+            x.ApiVersionReader = ApiVersionReader.Combine(
+                    new HeaderApiVersionReader("x-api-version"),
+                    new MediaTypeApiVersionReader("x-api-version"));
+            });
+            
             services.AddDbContext<AnimalFactsContext>(opt =>
                 opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
