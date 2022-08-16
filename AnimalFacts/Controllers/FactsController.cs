@@ -11,11 +11,11 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 
 
 
-namespace AnimalFacts.Controllers
+namespace AnimalFacts.Controllers.v1
 {
   [ApiController]
   [ApiVersion("1.0")]
-  [Route("api/{version:apiVersion}/Fact")]
+  [Route("api/v1/facts")]
   
   public class FactsV1Controller : ControllerBase
   {
@@ -56,36 +56,6 @@ namespace AnimalFacts.Controllers
 
       return await query.ToListAsync();
     }
-    
-    // [HttpGet]
-    // [ApiVersion("2.0")]
-    // public async Task<ActionResult<IEnumerable<Fact>>> GetV2(string nsfw)
-    // {
-    //    var query = _db.Facts.AsQueryable();
-
-      // if (animaltype != null)
-      // {
-      //   query = query.Where(entry => entry.AnimalType == animaltype);
-      // }
-
-      // if (species != null)
-      // {
-      //   query = query.Where(entry => entry.Species == species);
-      // } 
-
-      // if (description != null)
-      // {
-      //   query = query.Where(entry => entry.Description == description);
-      // }
-
-      // if (nsfw != null)
-      // {
-      //   query = query.Where(entry => entry.Nsfw == nsfw);
-      // }
-
-      //  return await query.ToListAsync();
-      // }
-
 
     // GET: api/Facts/5
     [HttpGet("{id}")]
